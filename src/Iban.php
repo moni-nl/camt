@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Genkgo\Camt;
 
+use Exception;
 use Iban\Validation\Iban as IbanDetails;
 use Iban\Validation\Validator;
 use InvalidArgumentException;
@@ -19,7 +20,7 @@ class Iban
         if (!(new Validator())->validate($iban)) {
             try {
                 $this->iban = $ibanDetails->getNormalizedIban();
-            } catch (\Exception) {
+            } catch (Exception) {
                 throw new InvalidArgumentException("Unknown IBAN {$ibanDetails}");
             }
         }
