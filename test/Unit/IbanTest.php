@@ -32,6 +32,23 @@ class IbanTest extends Framework\TestCase
     {
         $this->expectException(InvalidArgumentException::class);
 
-        new Iban('NL91ABNA0417164301');
+        new Iban('fdsfdsafdsafdasfdsafdsa');
+    }
+
+    /**
+     * @dataProvider validIbanIso2007DataProvider
+     */
+    public function testCamtSpecifiedIBAN(string $inputIban, string $expectedIban): void
+    {
+        $iban = new Iban($inputIban);
+
+        $this->assertEquals($expectedIban, $iban->getIban());
+    }
+
+    public function validIbanIso2007DataProvider(): \Generator
+    {
+        yield 'valid iban with text' => [ 'NL02ABNA0123456789 EXAMPLE', 'NL02ABNA0123456789EXAMPLE' ];
+        yield 'IBAN2007Identifier with invalid iban' => [ '02ABNA0123456789 EXAMPLE', '02ABNA0123456789EXAMPLE' ];
+        yield 'invalid iban gets formatted' => [ 'NL 91 ABNA 0417164301', 'NL91ABNA0417164301' ];
     }
 }
