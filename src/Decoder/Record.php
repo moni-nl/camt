@@ -41,7 +41,6 @@ class Record
 
             switch ($code) {
                 case 'OPBD':
-                case 'PRCD':
                     $record->addBalance(DTO\Balance::opening(
                         $money,
                         $date
@@ -56,6 +55,7 @@ class Record
 
                     break;
                 case 'CLBD':
+                case 'PRCD':
                     $record->addBalance(DTO\Balance::closing(
                         $money,
                         $date
