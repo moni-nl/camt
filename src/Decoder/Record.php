@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace Genkgo\Camt\Decoder;
 
+use Genkgo\Camt\Camt053\DTO\Statement;
 use Genkgo\Camt\DTO;
 use Genkgo\Camt\DTO\RecordWithBalances;
 use Genkgo\Camt\Util\MoneyFactory;
+use Money\Currency;
 use SimpleXMLElement;
 
 class Record
@@ -230,6 +232,50 @@ class Record
 
             $record->addEntry($entry);
             ++$index;
+        }
+    }
+
+    public function addSummary(DTO\Record $statement, SimpleXMLElement $xmlStatement): void
+    {
+        if (!$statement instanceof Statement) {
+            return;
+        }
+        if (isset($xmlStatement->TxsSummry)) {
+            $xmlSummary = $xmlStatement->TxsSummry;
+            if (isset($xmlSummary->TtlNtries)) {
+                $totals = $xmlSummary->TtlNtries;
+                if (isset($totals->NbOfNtries)) {
+                    $statement->setTotalEntries((int) $totals->NbOfNtries);
+                }
+                if (isset($totals->Sum)) {
+                    $statement->setTotalSum((string) $totals->Sum);
+                }
+                if (isset($totals->TtlNetNtryAmt)) {
+                    $statement->setTotalNetAmount((string) $totals->TtlNetNtryAmt);
+                }
+                if (isset($totals->CdtDbtInd)) {
+                    $statement->setTotalCreditDebitIndicator((string) $totals->CdtDbtInd);
+                }
+
+                if (isset($xmlStatement->TxsSummry->TtlDbtNtries)) {
+                    $debit = $xmlStatement->TxsSummry->TtlDbtNtries;
+                    if (isset($debit->NbOfNtries)) {
+                        $statement->setTotalDebitEntries((int) $debit->NbOfNtries);
+                    }
+                    if (isset($debit->Sum)) {
+                        $statement->setDebitSum((string) $debit->Sum);
+                    }
+                }
+                if (isset($xmlStatement->TxsSummry->TtlCdtNtries)) {
+                    $credit = $xmlStatement->TxsSummry->TtlCdtNtries;
+                    if (isset($credit->NbOfNtries)) {
+                        $statement->setTotalCreditEntries((int) $credit->NbOfNtries);
+                    }
+                    if (isset($credit->Sum)) {
+                        $statement->setCreditSum((string) $credit->Sum);
+                    }
+                }
+            }
         }
     }
 
