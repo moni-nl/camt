@@ -256,24 +256,23 @@ class Record
                 if (isset($totals->CdtDbtInd)) {
                     $statement->setTotalCreditDebitIndicator((string) $totals->CdtDbtInd);
                 }
-
-                if (isset($xmlStatement->TxsSummry->TtlDbtNtries)) {
-                    $debit = $xmlStatement->TxsSummry->TtlDbtNtries;
-                    if (isset($debit->NbOfNtries)) {
-                        $statement->setTotalDebitEntries((int) $debit->NbOfNtries);
-                    }
-                    if (isset($debit->Sum)) {
-                        $statement->setDebitSum((string) $debit->Sum);
-                    }
+            }
+            if (isset($xmlSummary->TtlDbtNtries)) {
+                $debit = $xmlSummary->TtlDbtNtries;
+                if (isset($debit->NbOfNtries)) {
+                    $statement->setTotalDebitEntries((int) $debit->NbOfNtries);
                 }
-                if (isset($xmlStatement->TxsSummry->TtlCdtNtries)) {
-                    $credit = $xmlStatement->TxsSummry->TtlCdtNtries;
-                    if (isset($credit->NbOfNtries)) {
-                        $statement->setTotalCreditEntries((int) $credit->NbOfNtries);
-                    }
-                    if (isset($credit->Sum)) {
-                        $statement->setCreditSum((string) $credit->Sum);
-                    }
+                if (isset($debit->Sum)) {
+                    $statement->setDebitSum((string) $debit->Sum);
+                }
+            }
+            if (isset($xmlSummary->TtlCdtNtries)) {
+                $credit = $xmlSummary->TtlCdtNtries;
+                if (isset($credit->NbOfNtries)) {
+                    $statement->setTotalCreditEntries((int) $credit->NbOfNtries);
+                }
+                if (isset($credit->Sum)) {
+                    $statement->setCreditSum((string) $credit->Sum);
                 }
             }
         }
