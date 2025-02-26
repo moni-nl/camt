@@ -81,6 +81,8 @@
                     "__CLASS__": "DateTimeImmutable",
                     "0": "2015-03-10T18:43:50+00:00"
                 },
+                "getCreditSum": null,
+                "getDebitSum": null,
                 "getElectronicSequenceNumber": null,
                 "getEntries": [
                     "__RECURSIVITY__"
@@ -89,7 +91,13 @@
                 "getId": "254EURNL26VAYB8060476890",
                 "getLegalSequenceNumber": null,
                 "getPagination": null,
-                "getToDate": null
+                "getToDate": null,
+                "getTotalCreditDebitIndicator": null,
+                "getTotalCreditEntries": null,
+                "getTotalDebitEntries": null,
+                "getTotalEntries": null,
+                "getTotalNetAmount": null,
+                "getTotalSum": null
             },
             "getReference": null,
             "getReversalIndicator": false,
