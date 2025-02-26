@@ -112,6 +112,8 @@
                     "__CLASS__": "DateTimeImmutable",
                     "0": "2015-03-10T18:43:50+00:00"
                 },
+                "getCreditSum": null,
+                "getDebitSum": null,
                 "getElectronicSequenceNumber": "12312",
                 "getEntries": [
                     "__RECURSIVITY__"
@@ -126,7 +128,13 @@
                 "getToDate": {
                     "__CLASS__": "DateTimeImmutable",
                     "0": "2007-10-18T11:30:00+00:00"
-                }
+                },
+                "getTotalCreditDebitIndicator": null,
+                "getTotalCreditEntries": null,
+                "getTotalDebitEntries": null,
+                "getTotalEntries": null,
+                "getTotalNetAmount": null,
+                "getTotalSum": null
             },
             "getReference": null,
             "getReversalIndicator": false,

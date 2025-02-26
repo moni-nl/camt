@@ -206,6 +206,8 @@
                     "__CLASS__": "DateTimeImmutable",
                     "0": "2015-01-21T23:00:00+00:00"
                 },
+                "getCreditSum": null,
+                "getDebitSum": null,
                 "getElectronicSequenceNumber": "315",
                 "getEntries": [
                     "__RECURSIVITY__"
@@ -214,7 +216,13 @@
                 "getId": "CAMT0532015012200001",
                 "getLegalSequenceNumber": null,
                 "getPagination": null,
-                "getToDate": null
+                "getToDate": null,
+                "getTotalCreditDebitIndicator": null,
+                "getTotalCreditEntries": null,
+                "getTotalDebitEntries": null,
+                "getTotalEntries": null,
+                "getTotalNetAmount": null,
+                "getTotalSum": null
             },
             "getReference": null,
             "getReversalIndicator": false,
