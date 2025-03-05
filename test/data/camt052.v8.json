@@ -26,7 +26,9 @@
                 },
                 "getProprietary": null
             },
+            "getBatchAmount": null,
             "getBatchPaymentId": "FINP-0055-001",
+            "getBatchTransactionCount": 20,
             "getBookingDate": {
                 "__CLASS__": "DateTimeImmutable",
                 "0": "2007-10-18T09:15:00+00:00"
@@ -34,6 +36,7 @@
             "getCharges": null,
             "getCreditDebitIndicator": "DBIT",
             "getIndex": 0,
+            "getParentBatchPaymentId": "FINP-0055-001",
             "getRecord": {
                 "__CLASS__": "Genkgo\\Camt\\Camt052\\DTO\\Report",
                 "getAccount": {

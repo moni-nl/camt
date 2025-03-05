@@ -26,7 +26,9 @@
                 },
                 "getProprietary": null
             },
+            "getBatchAmount": null,
             "getBatchPaymentId": null,
+            "getBatchTransactionCount": null,
             "getBookingDate": {
                 "__CLASS__": "DateTimeImmutable",
                 "0": "2014-12-31T12:15:00+00:00"
@@ -34,6 +36,7 @@
             "getCharges": null,
             "getCreditDebitIndicator": "CRDT",
             "getIndex": 0,
+            "getParentBatchPaymentId": null,
             "getRecord": {
                 "__CLASS__": "Genkgo\\Camt\\Camt053\\DTO\\Statement",
                 "getAccount": {
