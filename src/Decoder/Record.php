@@ -153,6 +153,16 @@ class Record
 
             if (isset($xmlEntry->NtryDtls->Btch->PmtInfId) && (string) $xmlEntry->NtryDtls->Btch->PmtInfId) {
                 $entry->setBatchPaymentId((string) $xmlEntry->NtryDtls->Btch->PmtInfId);
+                $entry->setParentBatchPaymentId((string) $xmlEntry->NtryDtls->Btch->PmtInfId);
+            }
+
+            if (isset($xmlEntry->NtryDtls->Btch->NbOfTxs)) {
+                $entry->setBatchTransactionCount((int) $xmlEntry->NtryDtls->Btch->NbOfTxs);
+            }
+
+            if (isset($xmlEntry->NtryDtls->Btch->TtlAmt)) {
+                $batchAmount = $this->moneyFactory->create($xmlEntry->NtryDtls->Btch->TtlAmt, $xmlEntry->NtryDtls->Btch->CdtDbtInd);
+                $entry->setBatchAmount($batchAmount);
             }
 
             if (isset($xmlEntry->NtryDtls->TxDtls->Refs->PmtInfId) && (string) $xmlEntry->NtryDtls->TxDtls->Refs->PmtInfId) {

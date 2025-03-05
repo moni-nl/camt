@@ -32,6 +32,12 @@ class Entry
 
     private ?string $batchPaymentId = null;
 
+    private ?string $parentBatchPaymentId = null;
+
+    private ?int $batchTransactionCount = null;
+
+    private ?Money $batchAmount = null;
+
     private ?string $additionalInfo = null;
 
     private ?BankTransactionCode $bankTransactionCode = null;
@@ -137,6 +143,36 @@ class Entry
     public function getBatchPaymentId(): ?string
     {
         return $this->batchPaymentId;
+    }
+
+    public function setParentBatchPaymentId(?string $parentBatchPaymentId): void
+    {
+        $this->parentBatchPaymentId = trim((string) $parentBatchPaymentId);
+    }
+
+    public function getParentBatchPaymentId(): ?string
+    {
+        return $this->parentBatchPaymentId;
+    }
+
+    public function getBatchTransactionCount(): ?int
+    {
+        return $this->batchTransactionCount;
+    }
+
+    public function setBatchTransactionCount(?int $batchTransactionCount): void
+    {
+        $this->batchTransactionCount = $batchTransactionCount;
+    }
+
+    public function getBatchAmount(): ?Money
+    {
+        return $this->batchAmount;
+    }
+
+    public function setBatchAmount(?Money $batchAmount): void
+    {
+        $this->batchAmount = $batchAmount;
     }
 
     public function getAdditionalInfo(): ?string
