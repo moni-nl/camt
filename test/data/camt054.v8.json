@@ -30,7 +30,16 @@
                     "getIssuer": ""
                 }
             },
+            "getBatchAmount": {
+                "__CLASS__": "Money\\Money",
+                "getAmount": "-630",
+                "getCurrency": {
+                    "__CLASS__": "Money\\Currency",
+                    "getCode": "CHF"
+                }
+            },
             "getBatchPaymentId": "UXC06170000006PI00001",
+            "getBatchTransactionCount": 2,
             "getBookingDate": {
                 "__CLASS__": "DateTimeImmutable",
                 "0": "2007-10-18T00:00:00+00:00"
@@ -38,6 +47,7 @@
             "getCharges": null,
             "getCreditDebitIndicator": "DBIT",
             "getIndex": 0,
+            "getParentBatchPaymentId": "UXC06170000006PI00001",
             "getRecord": {
                 "__CLASS__": "Genkgo\\Camt\\Camt054\\DTO\\Notification",
                 "getAccount": {

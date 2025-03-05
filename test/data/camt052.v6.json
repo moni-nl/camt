@@ -30,7 +30,9 @@
                     "getIssuer": ""
                 }
             },
+            "getBatchAmount": null,
             "getBatchPaymentId": null,
+            "getBatchTransactionCount": null,
             "getBookingDate": {
                 "__CLASS__": "DateTimeImmutable",
                 "0": "2007-10-18T00:00:00+00:00"
@@ -38,6 +40,7 @@
             "getCharges": null,
             "getCreditDebitIndicator": "DBIT",
             "getIndex": 0,
+            "getParentBatchPaymentId": null,
             "getRecord": {
                 "__CLASS__": "Genkgo\\Camt\\Camt052\\DTO\\Report",
                 "getAccount": {
