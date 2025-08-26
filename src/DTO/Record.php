@@ -10,8 +10,6 @@ abstract class Record
 {
     protected string $id;
 
-    protected DateTimeImmutable $createdOn;
-
     protected Account $account;
 
     protected ?Pagination $pagination = null;
@@ -33,21 +31,15 @@ abstract class Record
 
     protected ?string $additionalInformation = null;
 
-    public function __construct(string $id, DateTimeImmutable $createdOn, Account $account)
+    public function __construct(string $id, Account $account)
     {
         $this->id = $id;
-        $this->createdOn = $createdOn;
         $this->account = $account;
     }
 
     public function getId(): string
     {
         return $this->id;
-    }
-
-    public function getCreatedOn(): DateTimeImmutable
-    {
-        return $this->createdOn;
     }
 
     public function getAccount(): Account
