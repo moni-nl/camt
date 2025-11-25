@@ -18,11 +18,14 @@
                 "getDomain": null,
                 "getProprietary": null
             },
+            "getBatchAmount": null,
             "getBatchPaymentId": null,
+            "getBatchTransactionCount": null,
             "getBookingDate": null,
             "getCharges": null,
             "getCreditDebitIndicator": "DBIT",
             "getIndex": 0,
+            "getParentBatchPaymentId": null,
             "getRecord": {
                 "__CLASS__": "Genkgo\\Camt\\Camt052\\DTO\\Report",
                 "getAccount": {

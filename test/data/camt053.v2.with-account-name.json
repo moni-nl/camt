@@ -22,7 +22,9 @@
                     "getIssuer": ""
                 }
             },
+            "getBatchAmount": null,
             "getBatchPaymentId": null,
+            "getBatchTransactionCount": null,
             "getBookingDate": {
                 "__CLASS__": "DateTimeImmutable",
                 "0": "2014-12-31T00:00:00+00:00"
@@ -30,6 +32,7 @@
             "getCharges": null,
             "getCreditDebitIndicator": "CRDT",
             "getIndex": 0,
+            "getParentBatchPaymentId": null,
             "getRecord": {
                 "__CLASS__": "Genkgo\\Camt\\Camt053\\DTO\\Statement",
                 "getAccount": {
@@ -65,6 +68,8 @@
                     "__CLASS__": "DateTimeImmutable",
                     "0": "2015-03-10T18:43:50+00:00"
                 },
+                "getCreditSum": null,
+                "getDebitSum": null,
                 "getElectronicSequenceNumber": null,
                 "getEntries": [
                     "__RECURSIVITY__"
@@ -73,7 +78,13 @@
                 "getId": "253EURCH2801234000123456789",
                 "getLegalSequenceNumber": null,
                 "getPagination": null,
-                "getToDate": null
+                "getToDate": null,
+                "getTotalCreditDebitIndicator": null,
+                "getTotalCreditEntries": null,
+                "getTotalDebitEntries": null,
+                "getTotalEntries": null,
+                "getTotalNetAmount": null,
+                "getTotalSum": null
             },
             "getReference": null,
             "getReversalIndicator": false,
